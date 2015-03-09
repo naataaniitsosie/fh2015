@@ -1,0 +1,263 @@
+<html>
+	<head>
+		<title>BYU Pow Wow</title>
+		<link href="angular_lib/bootstrap.min.css" rel="stylesheet">
+		<script src = "angular_lib/angular.min.js"></script>
+		<script src = "angular_lib/angular-ui-router.js"></script>
+		<script src = "/javascripts/angularApp.js"></script>
+		<style> .glyphicon-thumbs-up { cursor:pointer } </style>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	</head>
+
+	<body ng-app = "powwow">
+		<div class="col-md-7 col-md-offset-3">
+			<ui-view></ui-view>
+		</div>
+		
+		<script type="text/ng-template" id="participants.html">
+		</script>
+			
+		<script type="text/ng-template" id="/home.html">
+			<div class="page-header">
+				<h1>Provo South Stake 2015 Roots Tech</h1>
+			</div>
+			<h4>Registration</h4>
+
+			<form ng-submit = "registerContestant()" style="display:inline; float:left">
+				<div class="form-group">
+					<input type="text"
+						class="form-control"
+						placeholder="Last Name"
+						ng-model="last_name"></input>
+				</div>
+				<div class="form-group">
+					<input type="text"
+						class="form-control"
+						placeholder="First Name"
+						ng-model="first_name"></input>
+				</div>
+				<div class="form-group">
+					<input type="text"
+						class="form-control"
+						placeholder="Email"
+						ng-model="email"></input>
+				</div>
+				<!--<div class="form-group">
+					<input type="date"
+						class="form-control"
+						placeholder="Birthday"
+						ng-model="birthday"></input>
+				</div>
+				<div class="form-group">
+					<input type="text"
+						class="form-control"
+						placeholder="Tribe(s)"
+						ng-model="tribes"></input>
+				</div>
+				<div class="form-group">
+					<input type="text"
+						class="form-control"
+						placeholder="Address"
+						ng-model="address"></input>
+				</div>
+				<div class="form-group">
+					<input type="text"
+						class="form-control"
+						placeholder="City/Town"
+						ng-model="city"></input>
+				</div>
+				<div class="form-group">
+					<input type="text"
+						class="form-control"
+						placeholder="State/Providence"
+						ng-model="state"></input>
+				</div>
+				<div class="form-group">
+					<input type="number"
+						class="form-control"
+						placeholder="Zip/Postal Code"
+						ng-model="zipCode"
+						min="0"
+						max="99999"></input>
+				</div>
+				<div class="form-group">
+					<input type="text"
+						class="form-control"
+						placeholder="Phone"
+						ng-model="phone"></input>
+				</div>
+				<div class="form-group">
+					<input type="number"
+						class="form-control"
+						placeholder="SSN (no spaces, ex. 123456789)"
+						ng-model="ssn"
+						max="999999999"
+						min="0"></input>
+				</div>
+				<div class="form-group">
+					<input type="text"
+						class="form-control"
+						placeholder="Email (optional)"
+						ng-model="email"></input>
+				</div>
+				<div class="form-group">
+					<input type="number"
+						class="form-control"
+						placeholder="Dancer Number"
+						ng-model="id"
+						min="1"
+						max="999"></input>
+				</div>-->
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+			<!--
+				<div class = "form-group" style="display:inline; float:right;">Categories:
+						<br>
+						<input type="checkbox"
+							ng-model="mens_golden_age"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Men’s Golden Age
+						<br>
+						<input type="checkbox"
+							ng-model="mens_traditional" 
+							ng-true-value="yes"
+							ng-false-value="no">
+							Men’s Traditional
+						<br>
+						<input type="checkbox"
+							ng-model="mens_fancy"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Men’s Fancy
+						<br>
+						<input type="checkbox"
+							ng-model="mens_grass"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Men’s Grass
+						<br>
+						<input type="checkbox"
+							ng-model="teen_boys_traditional"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Teen Boys' Traditional
+						<br>
+						<input type="checkbox"
+								ng-model="teen_boys_fancy"
+								ng-true-value="yes"
+								ng-false-value="no">
+								Teen Boys' Fancy
+						<br>
+						<input type="checkbox"
+								ng-model="teen_boys_grass"
+								ng-true-value="yes"
+								ng-false-value="no">
+						Teen Boys' Grass
+						<br>
+						<input type="checkbox" 
+							ng-model="junior_boys_traditional"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Junior Boys' Traditional
+						<br>
+						<input type="checkbox" 
+							ng-model="junior_boys_fancy"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Junior Boys' Fancy
+						<br>
+						<input type="checkbox" 
+							ng-model="junior_boys_grass"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Junior Boys' Grass
+						<br>
+						<input type="checkbox" 
+							ng-model="womens_golden_age"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Women’s Golden Age
+						<br>
+						<input type="checkbox" 
+							ng-model="womens_traditional"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Women’s Traditional
+						<br>
+						<input type="checkbox" 
+							ng-model="womens_fancy"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Women’s Fancy Shawl
+						<br>
+						<input type="checkbox" 
+							ng-model="womens_jingle"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Women’s Jingle Dress
+						<br>
+						<input type="checkbox" 
+							ng-model="teen_girls_traditional"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Teen Girls' Traditional
+						<br>
+						<input type="checkbox" 
+							ng-model="teen_girls_fancy"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Teen Girls' Fancy Shawl
+						<br>
+						<input type="checkbox" 
+							ng-model="teen_girls_jingle"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Teen Girls' Jingle Dress
+						<br>
+						<input type="checkbox" 
+							ng-model="junior_girls_traditional"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Junior Girls' Traditional
+						<br>
+						<input type="checkbox" 
+							ng-model="junior_girls_fancy"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Junior Girls' Fancy Shawl
+						<br>
+						<input type="checkbox" 
+							ng-model="junior_girls_jingle"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Junior Girls' Jingle Dress
+						<br>
+						<input type="checkbox"
+							ng-model="boys_tiny_tots"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Boys Tiny Tots
+						<br>
+						<input type="checkbox"
+							ng-model="girls_tiny_tots"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Girls Tiny Tots
+						<br>
+						<input type="checkbox" 
+							ng-model="northern_drum"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Northern Drum
+						<br>
+						<input type="checkbox" 
+							ng-model="southern_drum"
+							ng-true-value="yes"
+							ng-false-value="no">
+							Southern Drum
+						<br>-->
+				</div>
+		</script>
+	</body>
+</html>

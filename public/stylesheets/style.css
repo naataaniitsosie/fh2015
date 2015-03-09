@@ -1,0 +1,21 @@
+table {
+	align: center;
+}
+td {
+    
+}
+th {
+    padding: 10px;
+}
+
+h3 {
+	text-align: center;
+}
+
+a.left{
+	text-align: left;
+}
+
+a.right{
+	text-align: right;
+}
