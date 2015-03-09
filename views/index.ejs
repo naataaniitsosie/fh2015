@@ -15,11 +15,12 @@
 		</div>
 		
 		<script type="text/ng-template" id="/admin/numbers.html">
-			<div ng-repeat="person in contestants">
-				<div class="page-header">
-					<h1>Provo South Stake 2015 Roots Tech</h1>
-				</div>
+			
+			<div class="page-header">
+				<h1>Provo South Stake 2015 Roots Tech</h1>
+			</div>
 				<h4>Participants</h4>
+			<div ng-repeat="person in contestants">
 				<ol>
 					<li>{{person.last_name}}, {{person.first_name}}</li>
 				</ol>
