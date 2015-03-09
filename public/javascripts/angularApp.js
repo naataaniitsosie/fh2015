@@ -6,14 +6,14 @@ angular.module('powwow', ['ui.router'])
 function($stateProvider, $urlRouterProvider) {
 
 	$stateProvider
-		.state('participants', {
-			url: '/participants',
-			templateUrl: '/participants.html',
+		.state('admin', {
+			url: '/admin/numbers',
+			templateUrl: '/admin/numbers.html',
 			controller: 'ParCtrl',
 			resolve: {
-				//contestantsPromise: ['contestants', function(contestants) {	
-					//return contestants.clear();
-				//}]
+				contestantsPromise: ['contestants', function(contestants){
+					return contestants.getAll();
+				}]
 			}
 		})
 		.state('contestants', {
@@ -76,7 +76,7 @@ function($stateProvider, $urlRouterProvider) {
 	
 	/* get All contestants without the events*/
 	o.getAll = function() {
-		return $http.get('/contestants').success(function(data){
+		return $http.get('/persons').success(function(data){
 			angular.copy(data, o.contestants);
 		});
 	};
