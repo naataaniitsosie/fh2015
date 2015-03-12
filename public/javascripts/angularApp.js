@@ -467,7 +467,7 @@ function($scope, contestants){
 				
 		if( $scope.last_name == '' || $scope.last_name === undefined ||
 			$scope.first_name == '' || $scope.first_name === undefined ||
-			$scope.email == '' || $scope.first_name === undefined
+			$scope.email == '' || $scope.email === undefined
 			)
 		{
 				alert("Fill out all information");
